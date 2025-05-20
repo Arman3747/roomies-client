@@ -1,12 +1,11 @@
 import React from 'react';
-import logoImage from '../assets/logo_roomies_dark.png'
 import { NavLink } from 'react-router';
 
 const Footer = () => {
     return (
         <div className='max-w-[1600px] mx-auto'>
             <div className='flex flex-col gap-4 justify-between items-center px-20 py-20 bg-[#2F3A4A]'>
-                <img className='h-[36px]' src={logoImage} alt="" />
+                <img className='h-[36px]' src="https://i.ibb.co/4nMpnFDJ/logo-roomies-dark.png" alt="" />
                 <div>
                     <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/">Home</NavLink>
                     <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/find">Find</NavLink>
