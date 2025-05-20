@@ -34,8 +34,8 @@ In this Web App, you can find a room or an apartment for your stay.
 - Uses [React Spinners](https://mhnpd.github.io/react-loader-spinner/) for Stylish Spinners
 - Uses [React-Toastify](https://fkhadra.github.io/react-toastify/introduction/) for displays customizable toast notifications easily
 - Uses [Swiper](https://swiperjs.com/) for creating modern, touch-friendly sliders and carousels efficiently
--Uses [lottie-react](https://lottiereact.com/) for renders lightweight, interactive animations in React web apps.
--Uses [react-simple-typewriter](https://react-simple-typewriter.vercel.app/?path=/story/introduction--page) for animates text with typewriter effect in React apps.
+- Uses [lottie-react](https://lottiereact.com/) for renders lightweight, interactive animations in React web apps.
+- Uses [react-simple-typewriter](https://react-simple-typewriter.vercel.app/?path=/story/introduction--page) for animates text with typewriter effect in React apps.
 
 
 - Uses [Netlify](https://www.netlify.com/) for deploys, hosts websites. 
