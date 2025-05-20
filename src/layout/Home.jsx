@@ -1,9 +1,10 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import SloganMarque from '../components/SloganMarque';
+import Loading from '../components/Loading';
 
 
-// 4AC49D green   172C40 black  Blue 0089DC
+//color: #2F3A4A (black) ; white ; bg - #EAEBEC; button collor - #006977  - semi - #6D7580 ; green - 5ebc67; lime -400;green 400; 
 const Home = () => {
 
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <Hero></Hero>
             
             <SloganMarque></SloganMarque>
+            <Loading></Loading>
 
             
 

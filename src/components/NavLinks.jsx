@@ -6,7 +6,7 @@ const NavLinks = () => {
         <>
             <NavLink className="mr-8 text-2xl hover:underline decoration-2 decoration-[#006977]" to="/">Home</NavLink>
             <NavLink className="mr-8 text-2xl hover:underline decoration-2 decoration-[#006977]" to="/find">Find</NavLink>
-            <NavLink className="mr-8 text-2xl hover:underline decoration-2 decoration-[#006977]" to="/browseListing">Browse Listing</NavLink>
+            <NavLink className="mr-8 text-2xl hover:underline decoration-2 decoration-[#006977]" to="/browseListing">Browse</NavLink>
             <NavLink className="mr-8 text-2xl hover:underline decoration-2 decoration-[#006977]" to="/myListings">My Listings</NavLink>
         </>
     );
