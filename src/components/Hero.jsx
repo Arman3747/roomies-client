@@ -5,10 +5,11 @@ import hero_sitting from "../assets/hero_sitting.json"
 
 const Hero = () => {
     return (
-    <div className='flex justify-between items-center'>
+    <div className='flex flex-col-reverse lg:flex-row justify-between items-center'>
       <div className='w-full lg:w-1/2'>
         <h1 className='text-6xl'>
           Find Your {' '}
+          <span className='block lg:hidden'><br /></span>
           <span className='font-bold text-[#5ebc67]'>
             {/* Style will be inherited from the parent element */}
             <Typewriter
