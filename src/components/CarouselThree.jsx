@@ -28,7 +28,7 @@ const CarouselThree = () => {
                 </div>
             </div>
 
-            <div className='w-full lg:w-1/2 lg:px-5'>
+            <div className='w-full lg:w-1/2'>
 
                 <Lottie animationData={bowlingPlaying} />
 

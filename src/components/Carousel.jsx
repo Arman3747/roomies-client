@@ -28,7 +28,7 @@ const Carousel = () => {
                 }}
                 navigation={true}
                 modules={[Pagination, Navigation]}
-                className="mySwiper flex items-center justify-center"
+                className="mySwiper"
             >
                 <SwiperSlide> <CarouselOne></CarouselOne> </SwiperSlide>
                 <SwiperSlide> <CarouselTwo></CarouselTwo> </SwiperSlide>

@@ -2,6 +2,9 @@ import React from 'react';
 import Hero from '../components/Hero';
 import SloganMarque from '../components/SloganMarque';
 import Carousel from '../components/Carousel';
+import Faqs from '../components/Faqs';
+import TotalServices from '../components/TotalServices';
+import History from '../components/History';
 
 
 //color: #2F3A4A (black) ; white ; bg - #EAEBEC; button collor - #006977  - semi - #6D7580 ; green - 5ebc67; lime -400;green 400; 
@@ -12,9 +15,19 @@ const Home = () => {
 
             <Hero></Hero>
 
+            <Carousel></Carousel>
+
             <SloganMarque></SloganMarque>
 
-            <Carousel></Carousel>
+            <TotalServices></TotalServices>
+
+            <History></History>
+
+            <Faqs></Faqs>
+
+
+
+
 
 
 

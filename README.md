@@ -36,7 +36,7 @@ In this Web App, you can find a room or an apartment for your stay.
 - Uses [Swiper](https://swiperjs.com/) for creating modern, touch-friendly sliders and carousels efficiently
 - Uses [lottie-react](https://lottiereact.com/) for renders lightweight, interactive animations in React web apps.
 - Uses [react-simple-typewriter](https://react-simple-typewriter.vercel.app/?path=/story/introduction--page) for animates text with typewriter effect in React apps.
-
+- Uses [react-countup](https://www.npmjs.com/package/react-countup) for animates numbers counting up in React user interfaces.
 
 - Uses [Netlify](https://www.netlify.com/) for deploys, hosts websites. 
 
