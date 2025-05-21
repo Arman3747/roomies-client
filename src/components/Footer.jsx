@@ -9,7 +9,7 @@ const Footer = () => {
                 <div>
                     <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/">Home</NavLink>
                     <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/find">Find</NavLink>
-                    <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/browseListing">Browse</NavLink>
+                    <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/browseRoommate">Browse</NavLink>
                     <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/myListings">My Listings</NavLink>
                 </div>
                 <div className=' flex justify-center items-center gap-4 text-white'> 

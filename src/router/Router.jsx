@@ -1,41 +1,45 @@
 import {
     createBrowserRouter,
-  } from "react-router";
+} from "react-router";
 import Root from "../layout/Root";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../layout/Home";
 import AddRoommate from "../components/AddRoommate";
 import BrowseRoommate from "../components/BrowseRoommate";
 import Loading from "../components/Loading";
+import RoomDetails from "../components/RoomDetails";
 
 
 const router = createBrowserRouter([
     {
-        path:"/",
+        path: "/",
         element: <Root></Root>,
         errorElement: <ErrorPage></ErrorPage>,
-        children:[
+        children: [
             {
                 index: true,
-                path:'/',
+                path: '/',
                 element: <Home></Home>
             },
             {
-                path:"/addRoommate",
+                path: "/addRoommate",
                 element: <AddRoommate></AddRoommate>,
             },
             {
-                path:"/browseRoommate",
+                path: "/browseRoommate",
                 element: <BrowseRoommate></BrowseRoommate>,
                 loader: () => fetch('http://localhost:3000/roommates'),
                 hydrateFallbackElement: <Loading></Loading>,
             },
             {
-                path:"/login",
-                element: <h2> login </h2>,
+                path: "/roomDetails/:id",
+                element: <RoomDetails></RoomDetails>,
+                loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
+                hydrateFallbackElement: <Loading></Loading>,
+
             },
             {
-                path:"/register",
+                path: "/register",
                 element: <h2> login </h2>,
             },
         ]
@@ -44,6 +48,6 @@ const router = createBrowserRouter([
     //     path:"/*",
     //     element: <Error></Error>,
     // },
-  ]);
+]);
 
-  export default router;
+export default router;
