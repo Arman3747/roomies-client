@@ -9,6 +9,8 @@ import BrowseRoommate from "../components/BrowseRoommate";
 import Loading from "../components/Loading";
 import RoomDetails from "../components/RoomDetails";
 import UpdateRoommate from "../components/UpdateRoommate";
+import Login from "../layout/Login";
+import Register from "../layout/Register";
 
 
 const router = createBrowserRouter([
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
                 hydrateFallbackElement: <Loading></Loading>,
             },
+            {
+                path: "/login",
+                element: <Login></Login>,
+            },
+            {
+                path: "/register",
+                element: <Register></Register>,
+            }
         ]
     },
     // {

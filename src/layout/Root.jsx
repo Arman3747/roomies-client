@@ -1,9 +1,11 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
 import Footer from '../components/Footer';
+import Loading from '../components/Loading';
 
 const Root = () => {
+    const { state } = useNavigation();
     return (
         <div>
             <header>
@@ -11,13 +13,12 @@ const Root = () => {
             </header>
 
             <main>
-                 <Outlet></Outlet>
+                {state == "loading" ? <Loading></Loading> : <Outlet></Outlet>}
             </main>
 
             <footer>
                 <Footer></Footer>
             </footer>
-            
         </div>
     );
 };

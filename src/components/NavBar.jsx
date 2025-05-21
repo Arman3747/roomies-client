@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { use } from 'react';
 import NavLinks from './NavLinks';
 import SignUpButtons from './SignUpButtons';
+import { AuthContext } from '../provider/AuthProvider';
+import ProfilePicture from './ProfilePicture';
 
 
 
 const NavBar = () => {
+
+    const { user } = use(AuthContext);
 
     return (
         <div className='max-w-[1600px] mx-auto border-b-2 border-dashed border-[#2F3A4A] p-4'>
@@ -15,7 +19,9 @@ const NavBar = () => {
                 </div>
 
                 <div>
-                    <SignUpButtons></SignUpButtons>
+                    {
+                        user ? <ProfilePicture></ProfilePicture> : <SignUpButtons></SignUpButtons>
+                    }
                 </div>
             </div>
         </div>
