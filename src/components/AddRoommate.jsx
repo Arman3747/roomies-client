@@ -1,4 +1,6 @@
 import React from 'react';
+import Swal from 'sweetalert2'
+
 
 const AddRoommate = () => {
 
@@ -16,14 +18,22 @@ const AddRoommate = () => {
         fetch('http://localhost:3000/roommates', {
             method: 'POST',
             headers: {
-                'content-type' : 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(newRoommate),
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log('after adding roommate to db',data)
-        })
+            .then(res => res.json())
+            .then(data => {
+
+                if (data.insertedId) {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Your Room has been added !",
+                        showConfirmButton: false,
+                        timer: 1000
+                    });
+                }
+            })
 
     }
 
@@ -38,7 +48,7 @@ const AddRoommate = () => {
                         <input type="text" name='title' className="input" placeholder="Looking for a roommate in NYC" required />
 
                         <label className="label">Location</label>
-                        <input type="text" name='Location' className="input" placeholder="eg. NYC" required />
+                        <input type="text" name='location' className="input" placeholder="eg. NYC" required />
 
                         <label className="label">Rent Amount</label>
                         <input type="text" name='rent' className="input" placeholder="$ Amount" required />
@@ -50,7 +60,7 @@ const AddRoommate = () => {
                         <input type="text" name='lifestyle' className="input" placeholder="Pets, Smoking, Night Owl, etc." required />
 
                         <label className="label">Description</label>
-                        <input type="text" name='description' className="input" placeholder="Description" required />
+                        <input type="text" name='description' className="input" placeholder="Description (50 word max)" required />
 
                         <label className="label">Contact Info </label>
                         <input type="text" name='contact' className="input" placeholder="Contact Info " required />

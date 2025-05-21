@@ -5,6 +5,8 @@ import Root from "../layout/Root";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../layout/Home";
 import AddRoommate from "../components/AddRoommate";
+import BrowseRoommate from "../components/BrowseRoommate";
+import Loading from "../components/Loading";
 
 
 const router = createBrowserRouter([
@@ -23,8 +25,10 @@ const router = createBrowserRouter([
                 element: <AddRoommate></AddRoommate>,
             },
             {
-                path:"/bills",
-                element: <h2>bills</h2>
+                path:"/browseRoommate",
+                element: <BrowseRoommate></BrowseRoommate>,
+                loader: () => fetch('http://localhost:3000/roommates'),
+                hydrateFallbackElement: <Loading></Loading>,
             },
             {
                 path:"/login",
