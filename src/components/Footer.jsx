@@ -8,7 +8,7 @@ const Footer = () => {
                 <img className='h-[36px]' src="https://i.ibb.co/4nMpnFDJ/logo-roomies-dark.png" alt="" />
                 <div>
                     <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/">Home</NavLink>
-                    <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/find">Find</NavLink>
+                    <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/addRoommate">Find</NavLink>
                     <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/browseRoommate">Browse</NavLink>
                     <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/myListings">My Listings</NavLink>
                 </div>

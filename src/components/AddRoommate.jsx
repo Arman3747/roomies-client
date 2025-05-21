@@ -1,5 +1,5 @@
 import React from 'react';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 
 const AddRoommate = () => {
@@ -41,7 +41,7 @@ const AddRoommate = () => {
         <div className='max-w-[1600px] mx-auto py-20 flex justify-center items-center'>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                 <div className="card-body">
-                    <h1 className="text-4xl font-bold text-center">Add Roommate!</h1>
+                    <h1 className="text-4xl font-bold text-center">Add Room !</h1>
                     <form onSubmit={handleAddRoommate} className="fieldset">
 
                         <label className="label">Title</label>
@@ -59,8 +59,11 @@ const AddRoommate = () => {
                         <label className="label">Lifestyle Preferences</label>
                         <input type="text" name='lifestyle' className="input" placeholder="Pets, Smoking, Night Owl, etc." required />
 
+                        {/* <label className="label">Description</label>
+                        <input type="text" name='description' className="input" placeholder="Description (50 word max)" required /> */}
+
                         <label className="label">Description</label>
-                        <input type="text" name='description' className="input" placeholder="Description (50 word max)" required />
+                        <textarea name='description' className="textarea h-36" placeholder="Description (50 word max)" required ></textarea>
 
                         <label className="label">Contact Info </label>
                         <input type="text" name='contact' className="input" placeholder="Contact Info " required />

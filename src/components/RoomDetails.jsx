@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 import Swal from 'sweetalert2'
 
 const RoomDetails = () => {
@@ -80,10 +80,12 @@ const RoomDetails = () => {
 
                     <div className='flex justify-between items-center w-11/12 lg:w-10/12 mx-auto'>
                         <div></div>
-                        <button
-                            className="px-16 py-4 text-2xl font-semibold rounded-md border-2 cursor-pointer bg-white hover:cursor-pointer hover:bg-[#00697710] border-[#006977] text-[#006977]">
-                            Edit
-                        </button>
+                        <Link to={`/updateRoommate/${_id}`}>
+                            <button
+                                className="px-16 py-4 text-2xl font-semibold rounded-md border-2 cursor-pointer bg-white hover:cursor-pointer hover:bg-[#00697710] border-[#006977] text-[#006977]">
+                                Edit
+                            </button>
+                        </Link>
 
                         <button onClick={() => handleDelete(_id)}
                             className="px-16 py-4 text-2xl font-semibold rounded-md border-2 cursor-pointer hover:bg-red-50 hover:cursor-pointer bg-white border-red-500 text-red-500 hover:text-red-600">
