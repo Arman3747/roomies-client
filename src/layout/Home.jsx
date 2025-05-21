@@ -17,9 +17,9 @@ const Home = () => {
 
             <Carousel></Carousel>
 
-            <SloganMarque></SloganMarque>
-
             <TotalServices></TotalServices>
+
+            <SloganMarque></SloganMarque>
 
             <History></History>
 

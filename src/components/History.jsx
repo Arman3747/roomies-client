@@ -15,26 +15,26 @@ const History = () => {
                             {/* row 1 */}
                             <tr>
                                 <th className='border-r-2 border-[#6D758020] text-2xl px-5 py-5'>2021</th>
-                                <td className='text-2xl px-5 py-5'> roomies was launched in a small town.</td>
+                                <td className='text-2xl px-5 py-5'> <span  className='text-3xl text-[#006977]'>roomies</span> was launched in a small town.</td>
                             </tr>
                             {/* row 2 */}
                             <tr>
                                 <th className='border-r-2 border-[#6D758020] text-2xl px-5 py-5'>2022</th>
-                                <td className='text-2xl px-5 py-5'> roomies start to offer services to university students.</td>
+                                <td className='text-2xl px-5 py-5'> <span  className='text-3xl text-[#006977]'>roomies</span> start to offer services to university students.</td>
                             </tr>
                             {/* row 3 */}
                             <tr>
                                 <th className='border-r-2 border-[#6D758020] text-2xl px-5 py-5'>2023</th>
-                                <td className='text-2xl px-5 py-5'>roomies launched all over the whole country.</td>
+                                <td className='text-2xl px-5 py-5'><span  className='text-3xl text-[#006977]'>roomies</span> launched all over the whole country.</td>
                             </tr>
                             <tr>
                                 <th className='border-r-2 border-[#6D758020] text-2xl px-5 py-5'>2024</th>
-                                <td className='text-2xl px-5 py-5'> roomies becomes the largest specialized share accommodation website.</td>
+                                <td className='text-2xl px-5 py-5'> <span  className='text-3xl text-[#006977]'>roomies</span> becomes the largest specialized share accommodation website.</td>
                             </tr>
 
                             <tr>
                                 <th className='border-r-2 border-[#6D758020] text-2xl px-5 py-5'>2025</th>
-                                <td className='text-2xl px-5 py-5'> roomies hits 2 million visits in a month for the first time.</td>
+                                <td className='text-2xl px-5 py-5'> <span  className='text-3xl text-[#006977]'>roomies</span> hits 2 million visits in a month for the first time.</td>
                             </tr>
                         </tbody>
                     </table>

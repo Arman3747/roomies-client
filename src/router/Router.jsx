@@ -4,6 +4,7 @@ import {
 import Root from "../layout/Root";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../layout/Home";
+import AddRoommate from "../components/AddRoommate";
 
 
 const router = createBrowserRouter([
@@ -18,8 +19,8 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path:"/app",
-                element: <h2>bills</h2>
+                path:"/addRoommate",
+                element: <AddRoommate></AddRoommate>,
             },
             {
                 path:"/bills",
