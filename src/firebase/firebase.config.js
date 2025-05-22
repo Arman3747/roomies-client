@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAnO8TD7OSUbqRaaUSzH654PL6V6ki29Po",
-  authDomain: "roomies-client.firebaseapp.com",
-  projectId: "roomies-client",
-  storageBucket: "roomies-client.firebasestorage.app",
-  messagingSenderId: "953222115792",
-  appId: "1:953222115792:web:e843a3aa4ab180347449d5"
+  apiKey:import.meta.env.VITE_apiKey,
+  authDomain:import.meta.env.VITE_authDomain,
+  projectId:import.meta.env.VITE_projectId,
+  storageBucket:import.meta.env.VITE_storageBucket,
+  messagingSenderId:import.meta.env.VITE_messagingSenderId,
+  appId:import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase
