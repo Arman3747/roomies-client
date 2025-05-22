@@ -11,6 +11,7 @@ import RoomDetails from "../components/RoomDetails";
 import UpdateRoommate from "../components/UpdateRoommate";
 import Login from "../layout/Login";
 import Register from "../layout/Register";
+import PrivateRoute from "../provider/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/roomDetails/:id",
-                element: <RoomDetails></RoomDetails>,
+                element: <PrivateRoute><RoomDetails></RoomDetails></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
                 hydrateFallbackElement: <Loading></Loading>,
 
