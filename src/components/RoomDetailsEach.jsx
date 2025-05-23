@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 const RoomDetailsEach = ({ room }) => {
 
@@ -8,34 +8,34 @@ const RoomDetailsEach = ({ room }) => {
 
     const { _id, title, location, rent, type, lifestyle, description, contact, availability, email, name } = room;
 
-    const handleDelete = (_id) => {
+    // const handleDelete = (_id) => {
 
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`http://localhost:3000/roommates/${_id}`, {
-                    method: 'DELETE'
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.deletedCount) {
-                            Swal.fire({
-                                title: "Deleted!",
-                                text: "Your room has been deleted !",
-                                icon: "success"
-                            });
-                        }
-                    })
-            }
-        });
-    }
+    //     Swal.fire({
+    //         title: "Are you sure?",
+    //         text: "You won't be able to revert this!",
+    //         icon: "warning",
+    //         showCancelButton: true,
+    //         confirmButtonColor: "#3085d6",
+    //         cancelButtonColor: "#d33",
+    //         confirmButtonText: "Yes, delete it!"
+    //     }).then((result) => {
+    //         if (result.isConfirmed) {
+    //             fetch(`http://localhost:3000/roommates/${_id}`, {
+    //                 method: 'DELETE'
+    //             })
+    //                 .then(res => res.json())
+    //                 .then(data => {
+    //                     if (data.deletedCount) {
+    //                         Swal.fire({
+    //                             title: "Deleted!",
+    //                             text: "Your room has been deleted !",
+    //                             icon: "success"
+    //                         });
+    //                     }
+    //                 })
+    //         }
+    //     });
+    // }
 
     return (
         <div>
@@ -78,7 +78,7 @@ const RoomDetailsEach = ({ room }) => {
                         <h3 className='text-2xl font-medium mb-4'>Name: {name}  </h3>
                     </div>
 
-                    <div className='flex justify-between items-center w-11/12 lg:w-10/12 mx-auto'>
+                    {/* <div className='flex justify-between items-center w-11/12 lg:w-10/12 mx-auto'>
                         <div></div>
                         <Link to={`/updateRoommate/${_id}`}>
                             <button
@@ -91,7 +91,7 @@ const RoomDetailsEach = ({ room }) => {
                             className="px-16 py-4 text-2xl font-semibold rounded-md border-2 cursor-pointer hover:bg-red-50 hover:cursor-pointer bg-white border-red-500 text-red-500 hover:text-red-600">
                             Delete
                         </button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

@@ -12,6 +12,7 @@ import UpdateRoommate from "../components/UpdateRoommate";
 import Login from "../layout/Login";
 import Register from "../layout/Register";
 import PrivateRoute from "../provider/PrivateRoute";
+import MyListings from "../components/MyListings";
 
 
 const router = createBrowserRouter([
@@ -34,6 +35,12 @@ const router = createBrowserRouter([
             {
                 path: "/browseRoommate",
                 element: <BrowseRoommate></BrowseRoommate>,
+                loader: () => fetch('http://localhost:3000/roommates'),
+                hydrateFallbackElement: <Loading></Loading>,
+            },
+            {
+                path: "/myListings",
+                element: <PrivateRoute><MyListings></MyListings></PrivateRoute>,
                 loader: () => fetch('http://localhost:3000/roommates'),
                 hydrateFallbackElement: <Loading></Loading>,
             },

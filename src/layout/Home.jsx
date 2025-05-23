@@ -14,7 +14,6 @@ const Home = () => {
 
     const [showRooms, setShowRooms] = useState([]);
     const rooms = useLoaderData();
-    // console.log(rooms);
 
     useEffect(() => {
 
@@ -27,11 +26,6 @@ const Home = () => {
             setShowRooms(availableRooms);
         }
     }, [])
-
-
-    // 
-
-    // console.log(rooms);
 
     return (
         <div className='max-w-[1600px] mx-auto px-4 py-2 lg:py-8'>
