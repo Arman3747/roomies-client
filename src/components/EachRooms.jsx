@@ -4,7 +4,7 @@ import Swal from 'sweetalert2'
 
 const EachRooms = ({ room }) => {
 
-    const { _id, title, location, rent, type, lifestyle, description, contact, availability, email, name } = room;
+    const { _id, title, location, rent, availability } = room;
 
     const handleDelete = (_id) => {
         // console.log(_id);
