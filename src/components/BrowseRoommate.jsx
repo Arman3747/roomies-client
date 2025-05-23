@@ -6,7 +6,7 @@ const BrowseRoommate = () => {
 
     const rooms = useLoaderData();
 
-    console.log(rooms);
+    // console.log(rooms);
 
     return (
         <div className='max-w-[1600px] mx-auto px-4 lg:px-8 space-y-4 my-8'>
