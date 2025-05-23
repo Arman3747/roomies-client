@@ -1,4 +1,5 @@
 import React from 'react';
+import MyListing from './MyListing';
 
 const MyListingsMiddle = ({myListingRooms}) => {
     return (

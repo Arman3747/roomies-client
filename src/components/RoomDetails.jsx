@@ -1,17 +1,19 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router';
-import ErrorPage from './ErrorPage';
+import { Link, Navigate, useLoaderData, useParams } from 'react-router';
 import RoomDetailsEach from './RoomDetailsEach';
 
 const RoomDetails = () => {
 
     const room = useLoaderData();
     const { id } = useParams();
+    // const navigate = useNavigate()
 
     return (
         <div>
             {
-                room._id === id ? <RoomDetailsEach room={room}></RoomDetailsEach>  : <ErrorPage></ErrorPage> 
+                room._id === id ? 
+                <RoomDetailsEach room={room}></RoomDetailsEach>  
+                : <Navigate to="/errorPage" />
             }
         </div>
     );

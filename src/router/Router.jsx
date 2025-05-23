@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/addRoommate",
-                element: <AddRoommate></AddRoommate>,
+                element: <PrivateRoute><AddRoommate></AddRoommate></PrivateRoute>,
             },
             {
                 path: "/browseRoommate",

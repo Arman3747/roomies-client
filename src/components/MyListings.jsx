@@ -1,7 +1,6 @@
 import React, { use, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
-import MyListing from './MyListing';
 import MyListingsEmpty from './MyListingsEmpty';
 import MyListingsMiddle from './MyListingsMiddle';
 
