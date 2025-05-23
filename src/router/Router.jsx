@@ -53,7 +53,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/updateRoommate/:id",
-                element: <UpdateRoommate></UpdateRoommate>,
+                element: <PrivateRoute><UpdateRoommate></UpdateRoommate></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
                 hydrateFallbackElement: <Loading></Loading>,
             },

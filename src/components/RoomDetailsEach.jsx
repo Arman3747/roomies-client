@@ -49,27 +49,27 @@ const RoomDetailsEach = ({ room }) => {
                         </div>
 
                         <div className='flex-1'>
-                            <h3 className='text-5xl font-semibold mb-4'>{title}</h3>
-                            <h4 className='text-3xl font-medium mb-4'>Location: {location}</h4>
+                            <h3 className='text-5xl font-semibold mb-4 text-center'>{title}</h3>
+                            <h4 className='text-3xl font-medium mb-4 text-center'>Location: {location}</h4>
                         </div>
                     </div>
 
-                    <div className='flex flex-col lg:flex-row justify-evenly items-center gap-4'>
-                        <div className='flex flex-col justify-center items-center'>
-                            <h3 className='text-2xl font-medium mb-4'>Rent: $ {rent} / week</h3>
-
-                            <h3 className='text-2xl font-medium mb-4'>Type: {type}  </h3>
-                        </div>
-
-                        <div className='flex flex-col justify-center items-center'>
-                            <h3 className='text-2xl font-medium mb-4'>Available: {availability}  </h3>
-
-                            <h3 className='text-2xl font-medium mb-4'>Lifestyle: {lifestyle}  </h3>
-                        </div>
+                    <div className='flex flex-col lg:flex-row justify-between w-11/12 lg:w-10/12 mx-auto items-center '>
+                        <h3 className='text-2xl font-medium mb-4'>Rent: $ {rent} / week</h3>
+                        <h3 className='text-2xl font-medium mb-4'>Type: {type}</h3>
+                        <h3 className='text-2xl font-medium mb-4'>Available: {availability}</h3>
                     </div>
 
-                    <div className=''>
+                    <div>
                         <h3 className='text-2xl font-medium mb-4 w-11/12 lg:w-10/12 mx-auto text-justify'>Description: {description}  </h3>
+                    </div>
+
+                    <div className='flex flex-row justify-around w-11/12 lg:w-10/12 mx-auto items-center gap-4'>
+                        {/* {lifestyle} */}
+                        {
+                            lifestyle.map(eachLifeStyle => <button className='btn btn-neutral btn-dash'>{eachLifeStyle}</button>)
+                        }
+
                     </div>
 
                     <div className='flex flex-col lg:flex-row justify-between w-11/12 lg:w-10/12 mx-auto items-center '>

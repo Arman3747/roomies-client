@@ -21,8 +21,6 @@ const AddRoommate = () => {
         );
     };
 
-
-
     const handleAddRoommate = (e) => {
         e.preventDefault();
 
