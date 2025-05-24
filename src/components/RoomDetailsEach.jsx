@@ -32,7 +32,7 @@ const RoomDetailsEach = ({ room }) => {
             }
 
             // update last sign in time
-            fetch(`http://localhost:3000/roommates/${_id}`, {
+            fetch(`https://roomies-server-seven.vercel.app/roommates/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'

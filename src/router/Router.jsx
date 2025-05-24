@@ -25,7 +25,7 @@ const router = createBrowserRouter([
                 index: true,
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:3000/roommates'),
+                loader: () => fetch('https://roomies-server-seven.vercel.app/roommates'),
                 hydrateFallbackElement: <Loading></Loading>,
             },
             {
@@ -35,25 +35,25 @@ const router = createBrowserRouter([
             {
                 path: "/browseRoommate",
                 element: <BrowseRoommate></BrowseRoommate>,
-                loader: () => fetch('http://localhost:3000/roommates'),
+                loader: () => fetch('https://roomies-server-seven.vercel.app/roommates'),
                 hydrateFallbackElement: <Loading></Loading>,
             },
             {
                 path: "/myListings",
                 element: <PrivateRoute><MyListings></MyListings></PrivateRoute>,
-                loader: () => fetch('http://localhost:3000/roommates'),
+                loader: () => fetch('https://roomies-server-seven.vercel.app/roommates'),
                 hydrateFallbackElement: <Loading></Loading>,
             },
             {
                 path: "/roomDetails/:id",
                 element: <PrivateRoute><RoomDetails></RoomDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
+                loader: ({ params }) => fetch(`https://roomies-server-seven.vercel.app/roommates/${params.id}`),
                 hydrateFallbackElement: <Loading></Loading>,
             },
             {
                 path: "/updateRoommate/:id",
                 element: <PrivateRoute><UpdateRoommate></UpdateRoommate></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
+                loader: ({ params }) => fetch(`https://roomies-server-seven.vercel.app/roommates/${params.id}`),
                 hydrateFallbackElement: <Loading></Loading>,
             },
             {

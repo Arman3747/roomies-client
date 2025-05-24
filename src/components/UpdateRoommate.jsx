@@ -53,7 +53,7 @@ const UpdateRoommate = () => {
         Object.assign(updatedRoom, myDetails);
 
         //updated DB
-        fetch(`http://localhost:3000/roommates/${_id}`, {
+        fetch(`https://roomies-server-seven.vercel.app/roommates/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
