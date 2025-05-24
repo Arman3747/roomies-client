@@ -14,6 +14,7 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [color, setColor] = useState(true);
     // const [money, setMoney] = useState(10000);
 
     console.log(user);
@@ -69,6 +70,8 @@ const AuthProvider = ({ children }) => {
 
     const authData = {
 
+        color,
+        setColor,
         user,
         setUser,
         createUser,

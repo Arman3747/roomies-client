@@ -16,7 +16,7 @@ const TotalServices = () => {
                     </div>
 
                     <div className='flex-col justify-center items-center w-full'>
-                        <h3 className='text-[#0F0F0F] font-bold text-5xl my-4 text-center'>
+                        <h3 className='font-bold text-5xl my-4 text-center'>
                             <CountUp start={1000} end={615500} delay={5} duration={9} />
                         </h3>
                         <p className='font-semibold text-4xl text-center'>Visitors</p>
@@ -30,7 +30,7 @@ const TotalServices = () => {
                     </div>
 
                     <div className='flex-col justify-center items-center w-full'>
-                        <h3 className='text-[#0F0F0F] font-bold text-5xl my-4 text-center'>
+                        <h3 className='font-bold text-5xl my-4 text-center'>
                             <CountUp start={1000} end={30000} delay={2} duration={9} />
                         </h3>
                         <p className='font-semibold text-4xl text-center'>New Members</p>
@@ -44,7 +44,7 @@ const TotalServices = () => {
                     </div>
 
                     <div className='flex-col justify-center items-center w-full'>
-                        <h3 className='text-[#0F0F0F] font-bold text-5xl my-4 text-center'>
+                        <h3 className='font-bold text-5xl my-4 text-center'>
                             <CountUp start={3000} end={12000} delay={2} duration={8} />
                         </h3>
                         <p className='font-semibold text-4xl text-center'>Active Members</p>
@@ -58,7 +58,7 @@ const TotalServices = () => {
                     </div>
 
                     <div className='flex-col justify-center items-center w-full'>
-                        <h3 className='text-[#0F0F0F] font-bold text-5xl my-4 text-center'>
+                        <h3 className='font-bold text-5xl my-4 text-center'>
                             <CountUp start={100000} end={1100000} delay={4} duration={11} />
                         </h3>
                         <p className='font-semibold text-4xl text-center'>Message Sent</p>

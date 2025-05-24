@@ -23,7 +23,7 @@ const Hero = () => {
             />
           </span>
         </h1>
-        <div className='bg-white text-5xl py-5 text-center flex mt-10'>
+        <div className='text-5xl py-5 text-center flex mt-10'>
             <span>Find Your Nest, With the Best !!!</span>
             </div>
       </div>

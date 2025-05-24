@@ -8,7 +8,7 @@ const AddRoommate = () => {
 
     const navigate = useNavigate();
 
-    const { user } = use(AuthContext);
+    const { user, color } = use(AuthContext);
     console.log(user.displayName, user.email);
 
     const [isAvailable, setIsAvailable] = useState(true);
@@ -135,48 +135,48 @@ const AddRoommate = () => {
 
     return (
         <div className='max-w-[1600px] mx-auto py-20 flex justify-center items-center'>
-            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+            <div className={`card w-full max-w-sm shrink-0 shadow-2xl ${color? "text-[#2F3A4A]" : "text-white" }`}>
                 <div className="card-body">
                     <h1 className="text-4xl font-bold text-center">Add Room !</h1>
                     <form onSubmit={handleAddRoommate} className="fieldset">
 
-                        <label className="label">Title</label>
-                        <input type="text" name='title' className="input" placeholder="Looking for a roommate in NYC" required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Title</label>
+                        <input type="text" name='title' className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="Looking for a roommate in NYC" required />
 
-                        <label className="label">Location</label>
-                        <input type="text" name='location' className="input" placeholder="eg. NYC" required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Location</label>
+                        <input type="text" name='location' className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="eg. NYC" required />
 
-                        <label className="label">Rent Amount</label>
-                        <input type="text" name='rent' className="input" placeholder="$ Amount" required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Rent Amount</label>
+                        <input type="text" name='rent' className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`}placeholder="$ Amount" required />
 
-                        <label className="label">Room Type</label>
-                        <input type="text" name='type' className="input" placeholder="Single / Shared" required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Room Type</label>
+                        <input type="text" name='type' className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="Single / Shared" required />
 
-                        <label className="label">Lifestyle Preferences</label>
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Lifestyle Preferences</label>
 
                         {/* start preference */}
 
-                        <label className="label">
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>
                             <input id="myInputOne" type="checkbox"
-                                className="checkbox"
+                                className="checkbox checkbox-neutral"
                                 value="No pets"
                                 onChange={handleCheckboxChange}
                             />
                             No pets
                         </label>
 
-                        <label className="label">
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>
                             <input id="myInputTwo" type="checkbox"
-                                className="checkbox"
+                                className="checkbox checkbox-neutral"
                                 value="Non Smokers"
                                 onChange={handleCheckboxChange}
                             />
                             Non Smokers
                         </label>
 
-                        <label className="label">
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>
                             <input id="myInputThree" type="checkbox"
-                                className="checkbox"
+                                className="checkbox checkbox-neutral"
                                 value="Night Owl"
                                 onChange={handleCheckboxChange}
                             />
@@ -189,16 +189,16 @@ const AddRoommate = () => {
                         {/* <label className="label">Description</label>
                         <input type="text" name='description' className="input" placeholder="Description (50 word max)" required /> */}
 
-                        <label className="label">Description</label>
-                        <textarea name='description' className="textarea h-36" placeholder="Description (100 word max)" required ></textarea>
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Description</label>
+                        <textarea name='description' className={`textarea h-36 ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="Description (100 word max)" required ></textarea>
 
-                        <label className="label">Contact Info </label>
-                        <input type="text" name='contact' className="input" placeholder="Contact Info " required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Contact Info </label>
+                        <input type="text" name='contact' className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="Contact Info " required />
 
-                        <label className="label">Picture</label>
-                        <input type="text" name='picture' className="input" placeholder="Room Picture URL" required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Picture</label>
+                        <input type="text" name='picture' className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="Room Picture URL" required />
 
-                        <label className="label">Availability</label>
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Availability</label>
                         <label className="btn">
                             <input id="radioOne" onClick={() => setIsAvailable(!isAvailable)} name='availability' type="checkbox" defaultChecked className="toggle" />
                             {isAvailable ? "Available" : <span className='text-gray-500'>"Not Available"</span>}
@@ -206,10 +206,10 @@ const AddRoommate = () => {
 
                         {/* <input type="text" name='availability' className="input" placeholder=" yes or no " required /> */}
 
-                        <label className="label">Email</label>
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Email</label>
                         <input type="email" name='email' defaultValue={user.email} className="input cursor-not-allowed" disabled />
 
-                        <label className="label">Name</label>
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Name</label>
                         <input type="text" name='name' defaultValue={user.displayName} className="input cursor-not-allowed" disabled />
 
                         <button type='submit' className="btn bg-[#006977] text-white mt-4">Add New Rooms</button>

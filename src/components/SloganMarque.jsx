@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 
 const SloganMarque = () => {
     return (
-        <div className='bg-white text-4xl my-5'>
+        <div className='text-4xl my-5'>
                 <Marquee pauseOnHover={true} speed={30} className='overflow-hidden flex gap-10 p-10'>
                     <p className="font-semibold pr-20">
                         Home, Together !

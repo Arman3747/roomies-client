@@ -16,7 +16,6 @@ const RoomDetailsEach = ({ room }) => {
 
     const [likeCountTotal, setLikeCountTotal] = useState(likeCount);
     const [likedUsersList, setLikedUsersList] = useState(likedUsers);
-    const [likedColor, setLikedColor] = useState(false);
 
     // const handleDelete = (_id) => {
 
