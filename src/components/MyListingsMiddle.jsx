@@ -1,7 +1,7 @@
 import React from 'react';
 import MyListing from './MyListing';
 
-const MyListingsMiddle = ({myListingRooms}) => {
+const MyListingsMiddle = ({myListingRooms , handleRemainingRooms}) => {
     return (
         <div className="overflow-x-auto">
             <table className="table">
@@ -17,7 +17,7 @@ const MyListingsMiddle = ({myListingRooms}) => {
 
                 <tbody>
                     {
-                        myListingRooms.map(myListingRoom => <MyListing key={myListingRoom._id} myListingRoom={myListingRoom}> </MyListing>)
+                        myListingRooms.map(myListingRoom => <MyListing key={myListingRoom._id} handleRemainingRooms={handleRemainingRooms} myListingRoom={myListingRoom}> </MyListing>)
                     }
                 </tbody>
             </table>

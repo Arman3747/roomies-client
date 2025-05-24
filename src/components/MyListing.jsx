@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import Swal from 'sweetalert2';
 
-const MyListing = ({ myListingRoom }) => {
+const MyListing = ({ myListingRoom, handleRemainingRooms }) => {
 
     const { _id, title, location, rent, availability } = myListingRoom;
 
@@ -24,6 +24,7 @@ const MyListing = ({ myListingRoom }) => {
                     .then(res => res.json())
                     .then(data => {
                         if (data.deletedCount) {
+                            handleRemainingRooms(_id);
                             Swal.fire({
                                 title: "Deleted!",
                                 text: "Your room has been deleted !",

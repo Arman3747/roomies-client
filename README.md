@@ -23,7 +23,7 @@ In this Web App, you can find a room or an apartment for your stay.
 - In the Profile page, users can update their name and profile picture.
 - An error page will display if the page is not available or an error occurs for a better user experience.
 
-## npm packages
+## npm packages in Client Side
 
 - Use [Babel](https://babeljs.io/) for Fast Refresh
 - Uses [SWC](https://swc.rs/) for Fast Refresh

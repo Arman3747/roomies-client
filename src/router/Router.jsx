@@ -49,7 +49,6 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><RoomDetails></RoomDetails></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
                 hydrateFallbackElement: <Loading></Loading>,
-
             },
             {
                 path: "/updateRoommate/:id",
