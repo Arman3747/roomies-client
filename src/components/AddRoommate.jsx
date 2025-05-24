@@ -61,6 +61,8 @@ const AddRoommate = () => {
         const contact = form.contact.value;
         const picture = form.picture.value;
         // const availability = form.availability.value;
+        const likeCount = 0;
+        const likedUsers = [];
 
         const newRoommate = {
             title,
@@ -71,6 +73,8 @@ const AddRoommate = () => {
             description,
             contact,
             picture,
+            likeCount,
+            likedUsers,
         };
 
 

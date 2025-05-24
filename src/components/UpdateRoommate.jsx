@@ -37,8 +37,8 @@ const UpdateRoommate = () => {
         const description = form.description.value;
         const contact = form.contact.value;
         const picture = form.picture.value;
-        
 
+        
         // const availability = form.availability.value;
 
         const updatedRoom = {
@@ -51,7 +51,6 @@ const UpdateRoommate = () => {
             contact,
             picture,
         };
-
 
         // old code 
         // const formDate = new FormData(form);
