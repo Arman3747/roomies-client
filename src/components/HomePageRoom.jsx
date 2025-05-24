@@ -3,13 +3,13 @@ import { Link } from 'react-router';
 
 const HomePageRoom = ({ showRoom }) => {
 
-    const { _id, title, location, rent, availability } = showRoom;
+    const { _id, title, picture,  location, rent, availability } = showRoom;
 
     return (
         <div className='border-2 p-4 rounded-2xl'>
             <div className='flex flex-col lg:flex-row items-center gap-10 px-20px'>
                 <div className='w-[240px] border-3 rounded-2xl border-[#00697720]'>
-                    <img className='w-[360px] rounded-2xl' src="https://i.ibb.co/23hDTvmC/roomies-icon.png" alt="" />
+                    <img className='w-[230px] h-[230px] object-cover rounded-2xl' src={picture} alt="" />
                 </div>
 
                 <div className='flex-1'>

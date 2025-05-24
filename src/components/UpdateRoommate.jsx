@@ -8,7 +8,7 @@ const UpdateRoommate = () => {
 
     const room = useLoaderData();
     // console.log(room);
-    const { _id, title, location, rent, type, lifestyle, description, contact, availability, email, name } = room;
+    const { _id, title, location, rent, type, lifestyle, description, contact, picture, availability, email, name } = room;
 
     const [isAvailable, setIsAvailable] = useState(availability === "yes" ? true : false);
 
@@ -24,7 +24,6 @@ const UpdateRoommate = () => {
         );
     };
 
-
     const handleEditRoommate = e => {
         e.preventDefault();
 
@@ -37,6 +36,9 @@ const UpdateRoommate = () => {
         // const lifestyle = form.lifestyle.value;
         const description = form.description.value;
         const contact = form.contact.value;
+        const picture = form.picture.value;
+        
+
         // const availability = form.availability.value;
 
         const updatedRoom = {
@@ -47,6 +49,7 @@ const UpdateRoommate = () => {
             lifestyle:lifestyleList,
             description,
             contact,
+            picture,
         };
 
 
@@ -154,6 +157,9 @@ const UpdateRoommate = () => {
 
                         <label className="label">Contact Info </label>
                         <input type="text" defaultValue={contact} name='contact' className="input" placeholder="Contact Info " required />
+
+                        <label className="label">Picture</label>
+                        <input type="text" defaultValue={picture} name='picture' className="input" placeholder="Room Picture URL" required />
 
                         <label className="label">Availability</label>
 

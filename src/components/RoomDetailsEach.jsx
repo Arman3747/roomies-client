@@ -6,7 +6,7 @@ const RoomDetailsEach = ({ room }) => {
 
     // Failed to load resource: the server responded with a status of 500 (Internal Server Error)
 
-    const { _id, title, location, rent, type, lifestyle, description, contact, availability, email, name } = room;
+    const { _id, title, location, rent, type, lifestyle, description, contact,picture, availability, email, name } = room;
 
     // const handleDelete = (_id) => {
 
@@ -44,8 +44,8 @@ const RoomDetailsEach = ({ room }) => {
                 <div className='flex flex-col gap-10 px-8px'>
 
                     <div className='flex flex-col lg:flex-row justify-center items-center gap-8 mx-auto'>
-                        <div className='w-[240px] border-3 rounded-2xl border-[#00697720]'>
-                            <img className='w-[360px] rounded-2xl' src="https://i.ibb.co/23hDTvmC/roomies-icon.png" alt="" />
+                        <div className='border-3 rounded-2xl border-[#00697720]'>
+                            <img className='w-[360px] h-[360px] object-cover rounded-2xl' src={picture} alt="" />
                         </div>
 
                         <div className='flex-1'>

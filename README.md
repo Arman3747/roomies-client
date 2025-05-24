@@ -10,17 +10,15 @@ In this Web App, you can find a room or an apartment for your stay.
 
 ## key features
 
+- Roomies is a Web App where users can post to search for a roommate to stay with.
 - Users can register and login.
 - Users can also register using a Google Account.
 - The home page displays all the features of the web app.
-- On the home page, users can choose their monthly plan.
-- Registered users can visit the Bills and Profile pages.
--In the navbar, users can click on their profile picture to see their username, email, and available balance.
-- Users can view all their outstanding bills on the Bills page.
-- Users can sort their bills on the Bills page.
-- Users can view the details of their bills and make payments.
-- In the Profile page, users can see their profile picture, name, and email.
-- In the Profile page, users can update their name and profile picture.
+- On the home page, users can view "Find a Room," see the average number of users per month, the history of the company, and Frequently Asked Questions.
+- Registered users can visit the "Add to Find Roommate" page where they can advertise a room for rent.
+- In the navbar, users can hover over their profile picture to see their username and click to sign out.
+- On the browse page, everyone can see all the room sharing posts. Each post has a "View Details" button that will take them to the details of that post.
+- Registered users can visit the My Listing page where they can see all their advertisements. Each advertisement is displayed in a table where each row represents an advertisement. Each row also contains an edit and a delete button. Registered users can edit their posts by clicking the edit button and can also delete their posts by clicking the delete button.
 - An error page will display if the page is not available or an error occurs for a better user experience.
 
 ## npm packages in Client Side
@@ -37,11 +35,11 @@ In this Web App, you can find a room or an apartment for your stay.
 - Uses [lottie-react](https://lottiereact.com/) for renders lightweight, interactive animations in React web apps.
 - Uses [react-simple-typewriter](https://react-simple-typewriter.vercel.app/?path=/story/introduction--page) for animates text with typewriter effect in React apps.
 - Uses [react-countup](https://www.npmjs.com/package/react-countup) for animates numbers counting up in React user interfaces.
-
-- Uses [Netlify](https://www.netlify.com/) for deploys, hosts websites. 
-
-
 - Uses [React Slick](https://react-slick.neostack.com/) for creating responsive, customizable carousels and sliders 
+- Uses [SweetAlert2](https://sweetalert2.github.io/) for creating beautiful, customizable, and responsive alert popups in web applications easily.
+- Uses [react-tooltip](https://react-tooltip.com/) for adding customizable, accessible, and interactive tooltips to React components and elements.
+- Uses [React Slick](https://react-slick.neostack.com/) for creating responsive, customizable carousels and sliders 
+- Uses [Netlify](https://www.netlify.com/) for deploys, hosts websites. 
 
 
 ### Thank you for Reading!

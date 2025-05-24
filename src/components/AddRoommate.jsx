@@ -59,6 +59,7 @@ const AddRoommate = () => {
         // const lifestyle = form.lifestyle.value;
         const description = form.description.value;
         const contact = form.contact.value;
+        const picture = form.picture.value;
         // const availability = form.availability.value;
 
         const newRoommate = {
@@ -69,6 +70,7 @@ const AddRoommate = () => {
             lifestyle: lifestyleList,
             description,
             contact,
+            picture,
         };
 
 
@@ -112,6 +114,7 @@ const AddRoommate = () => {
                             form.type.value = "";
                             form.description.value = "";
                             form.contact.value = "";
+                            form.picture.value = "";
 
                             navigate("/addRoommate");
                         }
@@ -188,8 +191,10 @@ const AddRoommate = () => {
                         <label className="label">Contact Info </label>
                         <input type="text" name='contact' className="input" placeholder="Contact Info " required />
 
-                        <label className="label">Availability</label>
+                        <label className="label">Picture</label>
+                        <input type="text" name='picture' className="input" placeholder="Room Picture URL" required />
 
+                        <label className="label">Availability</label>
                         <label className="btn">
                             <input id="radioOne" onClick={() => setIsAvailable(!isAvailable)} name='availability' type="checkbox" defaultChecked className="toggle" />
                             {isAvailable ? "Available" : <span className='text-gray-500'>"Not Available"</span>}

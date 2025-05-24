@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 
 const MyListing = ({ myListingRoom, handleRemainingRooms }) => {
 
-    const { _id, title, location, rent, availability } = myListingRoom;
+    const { _id, picture, title, location, rent, availability } = myListingRoom;
 
     const handleDelete = (_id) => {
 
@@ -36,7 +36,6 @@ const MyListing = ({ myListingRoom, handleRemainingRooms }) => {
         });
     }
 
-
     return (
         <tr>
             <td>
@@ -44,7 +43,7 @@ const MyListing = ({ myListingRoom, handleRemainingRooms }) => {
                     <div className="avatar">
                         <div className="mask mask-squircle h-12 w-12">
                             <img
-                                src="https://i.ibb.co/23hDTvmC/roomies-icon.png"
+                                src={picture}
                                 alt="house picture" />
                         </div>
                     </div>
