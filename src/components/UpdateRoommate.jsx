@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
 
 const UpdateRoommate = () => {
+
+    const navigate = useNavigate();
 
     const room = useLoaderData();
     // console.log(room);
@@ -79,8 +81,12 @@ const UpdateRoommate = () => {
                     Swal.fire({
                         icon: "success",
                         title: "Room Updated Successfully !",
-                        showConfirmButton: false,
-                        timer: 1000
+                        showConfirmButton: true,
+                    })
+                    .then((result) => {
+                        if (result.isConfirmed) {
+                            navigate("/myListings");
+                        }
                     });
                 }
             })

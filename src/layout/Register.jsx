@@ -2,6 +2,8 @@ import React, { use, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
+import Swal from 'sweetalert2';
+
 
 const Register = () => {
 
@@ -35,11 +37,10 @@ const Register = () => {
         //email error
         const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-        if(!isValidEmail(userEmail))
-        {
+        if (!isValidEmail(userEmail)) {
             setEmailError("Please provide a CORRECT email address !");
             return;
-        }else{
+        } else {
             setEmailError("");
         }
 
@@ -51,7 +52,7 @@ const Register = () => {
         // const hasSpecialCharacter = (str) => /[^a-zA-Z0-9]/.test(str);
 
         if (userPassword.length < 6) {
-            errors.push( "Password should be at least 6 CHARACTERS long !");
+            errors.push("Password should be at least 6 CHARACTERS long !");
         }
         if (!hasUppercase(userPassword)) {
             errors.push("Password should have an UPPERCASE character !");
@@ -84,7 +85,17 @@ const Register = () => {
                 updateUser({ displayName: userName, photoURL: userPhoto })
                     .then(() => {
                         setUser({ ...user, displayName: userName, photoURL: userPhoto });
-                        navigate('/');
+
+                        Swal.fire({
+                            icon: "success",
+                            title: "Registered Successfully !",
+                            showConfirmButton: true,
+                        })
+                            .then((result) => {
+                                if (result.isConfirmed) {
+                                    navigate('/');
+                                }
+                            });
                     })
                     .catch((error) => {
                         toast.error(`ERROR - ${error.message} `);
@@ -103,8 +114,16 @@ const Register = () => {
     const handleGoogleLogIn = () => {
         signInWithGoogle()
             .then(() => {
-                // console.log(result.user);
-                navigate('/');
+                Swal.fire({
+                    icon: "success",
+                    title: "Registered Successfully !",
+                    showConfirmButton: true,
+                })
+                    .then((result) => {
+                        if (result.isConfirmed) {
+                            navigate('/');
+                        }
+                    });
             })
             .catch(error => {
                 toast.error(`ERROR - ${error.message} `);

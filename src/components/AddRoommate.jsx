@@ -1,9 +1,12 @@
 import React, { use, useState } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
+import { useNavigate } from 'react-router';
 
 
 const AddRoommate = () => {
+
+    const navigate = useNavigate();
 
     const { user } = use(AuthContext);
     console.log(user.displayName, user.email);
@@ -20,6 +23,29 @@ const AddRoommate = () => {
             prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
         );
     };
+
+    const clearLifestyleSelection = () => {
+        setLifestyleList([]);
+
+        const checkboxOne = document.getElementById("myInputOne");
+        checkboxOne.defaultChecked = false; // sets the default (initial) state
+        checkboxOne.checked = false;
+
+        const checkboxTwo = document.getElementById("myInputTwo");
+        checkboxTwo.defaultChecked = false; // sets the default (initial) state
+        checkboxTwo.checked = false;
+
+        const checkboxThree = document.getElementById("myInputThree");
+        checkboxThree.defaultChecked = false; // sets the default (initial) state
+        checkboxThree.checked = false;
+
+        setIsAvailable(true); 
+        const radioButton = document.getElementById("radioOne");
+        radioButton.defaultChecked = true; // sets the default (initial) state
+        radioButton.checked = true;
+    };
+
+    console.log(lifestyleList);
 
     const handleAddRoommate = (e) => {
         e.preventDefault();
@@ -40,7 +66,7 @@ const AddRoommate = () => {
             location,
             rent,
             type,
-            lifestyle:lifestyleList,
+            lifestyle: lifestyleList,
             description,
             contact,
         };
@@ -69,8 +95,29 @@ const AddRoommate = () => {
                     Swal.fire({
                         icon: "success",
                         title: "Your Room has been added !",
-                        showConfirmButton: false,
-                        timer: 1000
+                        text: "Do you want to add more rooms ?",
+                        showCancelButton: true,
+                        showConfirmButton: true,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "YES, Add More rooms!"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+
+                            setIsAvailable(true);
+                            clearLifestyleSelection();
+                            form.title.value = "";
+                            form.location.value = "";
+                            form.rent.value = "";
+                            form.type.value = "";
+                            form.description.value = "";
+                            form.contact.value = "";
+
+                            navigate("/addRoommate");
+                        }
+                        else {
+                            navigate("/myListings");
+                        }
                     });
 
 
@@ -103,32 +150,32 @@ const AddRoommate = () => {
                         {/* start preference */}
 
                         <label className="label">
-                            <input type="checkbox" 
-                            className="checkbox" 
-                            value="No pets"
-                            onChange={handleCheckboxChange}
+                            <input id="myInputOne" type="checkbox"
+                                className="checkbox"
+                                value="No pets"
+                                onChange={handleCheckboxChange}
                             />
                             No pets
                         </label>
 
-                         <label className="label">
-                            <input type="checkbox" 
-                            className="checkbox" 
-                            value="Non Smokers"
-                            onChange={handleCheckboxChange}
+                        <label className="label">
+                            <input id="myInputTwo" type="checkbox"
+                                className="checkbox"
+                                value="Non Smokers"
+                                onChange={handleCheckboxChange}
                             />
                             Non Smokers
                         </label>
 
                         <label className="label">
-                            <input type="checkbox" 
-                            className="checkbox" 
-                            value="Night Owl"
-                            onChange={handleCheckboxChange}
+                            <input id="myInputThree" type="checkbox"
+                                className="checkbox"
+                                value="Night Owl"
+                                onChange={handleCheckboxChange}
                             />
                             Night Owl
                         </label>
-                        
+
                         {/* end preference */}
                         {/* <input type="text" name='lifestyle' className="input" placeholder="Pets, Smoking, Night Owl, etc." required /> */}
 
@@ -144,7 +191,7 @@ const AddRoommate = () => {
                         <label className="label">Availability</label>
 
                         <label className="btn">
-                            <input onClick={() => setIsAvailable(!isAvailable)} name='availability' type="checkbox" defaultChecked className="toggle" />
+                            <input id="radioOne" onClick={() => setIsAvailable(!isAvailable)} name='availability' type="checkbox" defaultChecked className="toggle" />
                             {isAvailable ? "Available" : <span className='text-gray-500'>"Not Available"</span>}
                         </label>
 
