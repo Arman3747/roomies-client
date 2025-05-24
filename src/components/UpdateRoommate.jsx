@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../provider/AuthProvider';
 
 const UpdateRoommate = () => {
+
+    const { color } = use(AuthContext);
 
     const navigate = useNavigate();
 
@@ -96,30 +99,30 @@ const UpdateRoommate = () => {
 
     return (
         <div className='max-w-[1600px] mx-auto py-20 flex justify-center items-center'>
-            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+            <div className={`card w-full max-w-sm shrink-0 shadow-2xl ${color? "text-[#2F3A4A]" : "text-white" }`}>
                 <div className="card-body">
                     <h1 className="text-4xl font-bold text-center">Update Room !</h1>
                     <form onSubmit={handleEditRoommate} className="fieldset">
 
-                        <label className="label">Title</label>
-                        <input type="text" name='title' defaultValue={title} className="input" placeholder="Looking for a roommate in NYC" required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Title</label>
+                        <input type="text" name='title' defaultValue={title} className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="Looking for a roommate in NYC" required />
 
-                        <label className="label">Location</label>
-                        <input type="text" name='location' defaultValue={location} className="input" placeholder="eg. NYC" required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Location</label>
+                        <input type="text" name='location' defaultValue={location} className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="eg. NYC" required />
 
-                        <label className="label">Rent Amount</label>
-                        <input type="text" name='rent' defaultValue={rent} className="input" placeholder="$ Amount" required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Rent Amount</label>
+                        <input type="text" name='rent' defaultValue={rent} className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="$ Amount" required />
 
-                        <label className="label">Room Type</label>
-                        <input type="text" name='type' defaultValue={type} className="input" placeholder="Single / Shared" required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Room Type</label>
+                        <input type="text" name='type' defaultValue={type} className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="Single / Shared" required />
 
-                        <label className="label">Lifestyle Preferences</label>
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Lifestyle Preferences</label>
 
                         {/* start preference */}
 
-                        <label className="label">
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>
                             <input type="checkbox" 
-                            className="checkbox" 
+                            className="checkbox checkbox-neutral" 
                             value="No pets"
                             defaultChecked={lifestyle.includes("No pets")}
                             onChange={handleCheckboxChange}
@@ -127,9 +130,9 @@ const UpdateRoommate = () => {
                             No pets
                         </label>
 
-                         <label className="label">
+                         <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>
                             <input type="checkbox" 
-                            className="checkbox" 
+                            className="checkbox checkbox-neutral" 
                             value="Non Smokers"
                             defaultChecked={lifestyle.includes("Non Smokers")}
                             onChange={handleCheckboxChange}
@@ -137,9 +140,9 @@ const UpdateRoommate = () => {
                             Non Smokers
                         </label>
 
-                        <label className="label">
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>
                             <input type="checkbox" 
-                            className="checkbox" 
+                            className="checkbox checkbox-neutral" 
                             value="Night Owl"
                             defaultChecked={lifestyle.includes("Night Owl")}
                             onChange={handleCheckboxChange}
@@ -151,16 +154,16 @@ const UpdateRoommate = () => {
 
                         {/* <input type="text" name='lifestyle' defaultValue={lifestyle} className="input" placeholder="Pets, Smoking, Night Owl, etc." required /> */}
 
-                        <label className="label">Description</label>
-                        <textarea name='description' defaultValue={description} className="textarea h-36" placeholder="Description (50 word max)" required ></textarea>
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Description</label>
+                        <textarea name='description' defaultValue={description} className={`textarea h-36  ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="Description (50 word max)" required ></textarea>
 
-                        <label className="label">Contact Info </label>
-                        <input type="text" defaultValue={contact} name='contact' className="input" placeholder="Contact Info " required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Contact Info </label>
+                        <input type="text" defaultValue={contact} name='contact' className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="Contact Info " required />
 
-                        <label className="label">Picture</label>
-                        <input type="text" defaultValue={picture} name='picture' className="input" placeholder="Room Picture URL" required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Picture</label>
+                        <input type="text" defaultValue={picture} name='picture' className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="Room Picture URL" required />
 
-                        <label className="label">Availability</label>
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Availability</label>
 
                         <label className="btn">
                             <input onClick={() => setIsAvailable(!isAvailable)} name='availability' type="checkbox" defaultChecked={isAvailable === true} className="toggle" />
@@ -169,10 +172,10 @@ const UpdateRoommate = () => {
 
                         {/* <input type="text" defaultValue={availability} name='availability' className="input" placeholder=" yes or no " required /> */}
 
-                        <label className="label">Email</label>
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Email</label>
                         <input type="email" name='email' defaultValue={email} className="input cursor-not-allowed" placeholder="Email" disabled />
 
-                        <label className="label">Name</label>
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Name</label>
                         <input type="text" name='name' defaultValue={name} className="input cursor-not-allowed" placeholder="Name" disabled />
 
                         <button type='submit' className="btn bg-[#006977] text-white mt-4">Update !</button>

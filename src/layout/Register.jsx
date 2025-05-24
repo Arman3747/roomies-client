@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 
 const Register = () => {
 
-    const { createUser, setUser, updateUser, signInWithGoogle } = use(AuthContext);
+    const { createUser, setUser, updateUser, signInWithGoogle, color } = use(AuthContext);
     const [nameError, setNameError] = useState("");
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState([]);
@@ -134,31 +134,31 @@ const Register = () => {
 
     return (
         <div className='max-w-[1600px] mx-auto py-20 flex justify-center items-center'>
-            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+            <div className={`card w-full max-w-sm shrink-0 shadow-2xl ${color? "text-[#2F3A4A]" : "text-white" }`}>
                 <div className="card-body">
                     <h1 className="text-4xl font-bold text-center">Register now!</h1>
 
                     <form onSubmit={handleRegister} className="fieldset">
 
-                        <label className="label">Full Name</label>
-                        <input type="text" name='name' className="input" placeholder="Full Name" required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Full Name</label>
+                        <input type="text" name='name' className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="Full Name" required />
 
                         {
                             nameError && <p className='text-red-600'>{nameError}</p>
                         }
 
-                        <label className="label">Email</label>
-                        <input type="email" name='email' className="input" placeholder="Email" required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Email</label>
+                        <input type="email" name='email' className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="Email" required />
 
                         {
                             emailError && <p className='text-red-600'>{emailError}</p>
                         }
 
-                        <label className="label">Photo URL</label>
-                        <input type="text" name='photoUrl' className="input" placeholder="Photo URL" required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Photo URL</label>
+                        <input type="text" name='photoUrl' className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="Photo URL" required />
 
-                        <label className="label">Password</label>
-                        <input type="password" name='password' className="input" placeholder="Password" required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Password</label>
+                        <input type="password" name='password' className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="Password" required />
 
                         {passwordError && passwordError.map((error, index) => (
                             <p key={index} className="text-red-600">{error}</p>

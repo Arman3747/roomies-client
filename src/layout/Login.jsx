@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 const Login = () => {
 
     const [error, setError] = useState("");
-    const { signIn, signInWithGoogle } = use(AuthContext)
+    const { signIn, signInWithGoogle, color } = use(AuthContext)
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -60,19 +60,19 @@ const Login = () => {
 
     return (
         <div className='max-w-[1600px] mx-auto py-40 flex justify-center items-center'>
-            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+            <div className={`card w-full max-w-sm shrink-0 shadow-2xl ${color? "text-[#2F3A4A]" : "text-white" }`}>
                 <div className="card-body">
                     <h1 className="text-4xl font-bold text-center">Login now!</h1>
 
                     <form onSubmit={handleLogin} className="fieldset">
 
-                        <label className="label">Email</label>
-                        <input type="email" name='email' className="input" placeholder="Email" required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Email</label>
+                        <input type="email" name='email' className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="Email" required />
 
-                        <label className="label">Password</label>
-                        <input type="password" name='password' className="input" placeholder="Password" required />
+                        <label className={`label ${color? "text-[#2F3A4A]" : "text-white" }`}>Password</label>
+                        <input type="password" name='password' className={`input ${color ? "text-[#2F3A4A]" : "text-[#2F3A4A] placeholder-[#2F3A4A50]" }`} placeholder="Password" required />
                         <div>
-                            <Link className="link link-hover text-indigo-700" to="/login">Forgot password?</Link>
+                            <Link className={`link link-hover ${color ? "text-indigo-700" : "text-white underline" }`} to="/login">Forgot password?</Link>
                         </div>
 
                         {

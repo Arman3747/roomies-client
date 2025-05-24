@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link } from 'react-router';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../provider/AuthProvider';
 
 const EachRooms = ({ room }) => {
+
+    const { color } = use(AuthContext);
 
     const { _id, title, location, rent, picture, availability } = room;
 
@@ -38,7 +41,7 @@ const EachRooms = ({ room }) => {
     return (
         <div className='border-2 p-4 rounded-2xl'>
             <div className='flex flex-col lg:flex-row items-center gap-10 px-20px'>
-                <div className='w-[240px] border-3 rounded-2xl border-[#00697720]'>
+                <div className={`w-[230px] border-3 rounded-2xl ${color ? "border-[#00697720]" : "border-gray-500" }`}>
                     <img className='w-[230px] h-[230px] object-cover rounded-2xl' src={picture} alt="" />
                 </div>
 
@@ -53,7 +56,7 @@ const EachRooms = ({ room }) => {
 
                     <Link to={`/roomDetails/${_id}`}>
                         <button
-                            className="my-8 w-full py-4 text-lg font-semibold rounded-full border-2 cursor-pointer hover:underline hover:bg-white hover:cursor-pointer bg-[#00697710] border-[#006977] text-[#006977]">
+                            className={`my-8 w-full py-4 text-lg font-semibold rounded-full border-2 cursor-pointer hover:underline hover:cursor-pointer  ${ color ? "hover:bg-white  bg-[#00697710] border-[#006977] text-[#006977]"  : "bg-gray-700 border-white text-white" }`}>
                             View Details
                         </button>
                     </Link>

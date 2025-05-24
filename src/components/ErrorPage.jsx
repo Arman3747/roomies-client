@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import Lottie from "lottie-react";
 import pageNotFound from "../assets/pageNotFound.json"
+import { AuthContext } from '../provider/AuthProvider';
 
 const ErrorPage = () => {
     return (

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link } from 'react-router';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../provider/AuthProvider';
 
 const MyListing = ({ myListingRoom, handleRemainingRooms }) => {
 
+    const { color } = use(AuthContext);
+ 
     const { _id, picture, title, location, rent, availability } = myListingRoom;
 
     const handleDelete = (_id) => {
@@ -56,19 +59,19 @@ const MyListing = ({ myListingRoom, handleRemainingRooms }) => {
             <td>
                 {title}
                 <br />
-                <span className="badge badge-ghost badge-sm"> Availability: {availability}</span>
+                <span className="badge badge-ghost badge-sm"> Free: {availability}</span>
             </td>
             <td>
                 <Link to={`/updateRoommate/${_id}`}>
                     <button
-                        className="btn btn-neutral btn-outline">
+                        className={`btn  ${color ? "btn-neutral btn-outline" : " btn-neutral"}`}>
                         Edit
                     </button>
                 </Link>
             </td>
             <th>
                 <button onClick={() => handleDelete(_id)}
-                    className="btn btn-error btn-outline hover:text-white">
+                    className={`btn hover:text-white ${color ? "btn-error btn-outline" : "btn-error"}`}>
                     Delete
                 </button>
             </th>

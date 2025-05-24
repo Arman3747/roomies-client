@@ -11,7 +11,7 @@ const HomePageRoom = ({ showRoom }) => {
     return (
         <div className='border-2 p-4 rounded-2xl'>
             <div className='flex flex-col lg:flex-row items-center gap-10 px-20px'>
-                <div className={`w-[240px] border-3 rounded-2xl ${color ? "border-[#00697720]" : "border-gray-500" }`}>
+                <div className={`w-[230px] border-3 rounded-2xl ${color ? "border-[#00697720]" : "border-gray-500" }`}>
                     <img className='w-[230px] h-[230px] object-cover rounded-2xl' src={picture} alt="" />
                 </div>
 

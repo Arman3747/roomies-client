@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { use } from 'react';
 import MyListing from './MyListing';
+import { AuthContext } from '../provider/AuthProvider';
 
 const MyListingsMiddle = ({myListingRooms , handleRemainingRooms}) => {
+
+    const { color } = use(AuthContext);
     return (
         <div className="overflow-x-auto">
             <table className="table">
                 {/* head */}
                 <thead>
-                    <tr>
+                    <tr className={`${color ? "text-[#2F3A4A]" : "text-white"}`}>
                         <th>Location</th>
                         <th>Title</th>
                         <th>Edit</th>

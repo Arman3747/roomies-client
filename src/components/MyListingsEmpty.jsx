@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { use } from 'react';
 
 import Lottie from "lottie-react";
 import emptyListings from "../assets/empty_listing.json"
 import { Link } from 'react-router';
+import { AuthContext } from '../provider/AuthProvider';
 
 const MyListingsEmpty = () => {
+
+    const { color } = use(AuthContext);
+
     return (
         <div className='mb-16'>
             <div className='max-w-[1600px] mx-auto p-4 lg:px-[10px]'>
@@ -16,7 +20,7 @@ const MyListingsEmpty = () => {
                         <p className='font-semibold text-3xl text-center'>Let's add some rooms for rent.</p>
 
                         <Link to="/addRoommate">
-                            <button className="btn btn-neutral hover:btn-success  btn-outline">Add New Rooms !</button>
+                            <button className={`btn hover:btn-success ${color? "btn-neutral btn-outline" : "btn-neutral"}`}>Add New Rooms !</button>
                         </Link>
                     </div>
 

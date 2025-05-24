@@ -105,7 +105,7 @@ const RoomDetailsEach = ({ room }) => {
                     
 
                     <div className='flex flex-col lg:flex-row justify-center items-center gap-8 mx-auto'>
-                        <div className='border-3 rounded-2xl border-[#00697720]'>
+                        <div className='border-2 rounded-2xl border-[#00697720]'>
                             <img className='w-[360px] h-[360px] object-cover rounded-2xl' src={picture} alt="" />
                         </div>
 
@@ -128,7 +128,7 @@ const RoomDetailsEach = ({ room }) => {
                     <div className='flex flex-row justify-around w-11/12 lg:w-10/12 mx-auto items-center gap-4'>
                         {/* {lifestyle} */}
                         {
-                            lifestyle.map((eachLifeStyle, index) => <button key={index} className='btn btn-neutral btn-dash'>{eachLifeStyle}</button>)
+                            lifestyle.map((eachLifeStyle, index) => <button key={index} className='btn btn-neutral'>{eachLifeStyle}</button>)
                         }
 
                     </div>
