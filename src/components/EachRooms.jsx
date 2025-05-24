@@ -1,42 +1,11 @@
 import React, { use } from 'react';
 import { Link } from 'react-router';
-import Swal from 'sweetalert2'
 import { AuthContext } from '../provider/AuthProvider';
 
 const EachRooms = ({ room }) => {
 
     const { color } = use(AuthContext);
-
     const { _id, title, location, rent, picture, availability } = room;
-
-    // const handleDelete = (_id) => {
-    //     // console.log(_id);
-    //     Swal.fire({
-    //         title: "Are you sure?",
-    //         text: "You won't be able to revert this!",
-    //         icon: "warning",
-    //         showCancelButton: true,
-    //         confirmButtonColor: "#3085d6",
-    //         cancelButtonColor: "#d33",
-    //         confirmButtonText: "Yes, delete it!"
-    //     }).then((result) => {
-    //         if (result.isConfirmed) {
-    //             fetch(`http://localhost:3000/roommates/${_id}`, {
-    //                 method: 'DELETE'
-    //             })
-    //                 .then(res => res.json())
-    //                 .then(data => {
-    //                     if (data.deletedCount) {
-    //                         Swal.fire({
-    //                             title: "Deleted!",
-    //                             text: "Your room has been deleted !",
-    //                             icon: "success"
-    //                         });
-    //                     }
-    //                 })
-    //         }
-    //     });
-    // }
 
     return (
         <div className='border-2 p-4 rounded-2xl'>
@@ -60,12 +29,6 @@ const EachRooms = ({ room }) => {
                             View Details
                         </button>
                     </Link>
-
-                    {/* <button onClick={() => handleDelete(_id)}
-                        className="my-8 w-full py-4 text-lg font-semibold rounded-full border-2 cursor-pointer hover:underline hover:bg-white hover:cursor-pointer bg-[#00697710] border-[#006977] text-[#006977]">
-                        Delete
-                    </button> */}
-
                 </div>
             </div>
         </div>

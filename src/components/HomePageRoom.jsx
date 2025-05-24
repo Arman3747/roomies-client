@@ -5,7 +5,6 @@ import { AuthContext } from '../provider/AuthProvider';
 const HomePageRoom = ({ showRoom }) => {
 
     const { color } = use(AuthContext);
-
     const { _id, title, picture,  location, rent, availability } = showRoom;
 
     return (

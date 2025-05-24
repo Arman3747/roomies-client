@@ -6,11 +6,9 @@ import { AuthContext } from '../provider/AuthProvider';
 const UpdateRoommate = () => {
 
     const { color } = use(AuthContext);
-
     const navigate = useNavigate();
-
     const room = useLoaderData();
-    // console.log(room);
+
     const { _id, title, location, rent, type, lifestyle, description, contact, picture, availability, email, name } = room;
 
     const [isAvailable, setIsAvailable] = useState(availability === "yes" ? true : false);
@@ -18,7 +16,6 @@ const UpdateRoommate = () => {
     const myDetails = { availability: isAvailable ? "yes" : "no", };
 
     const [lifestyleList, setLifestyleList] = useState(lifestyle);
-    console.log(lifestyleList);
 
     const handleCheckboxChange = (e) => {
         const value = e.target.value;
@@ -40,8 +37,6 @@ const UpdateRoommate = () => {
         const description = form.description.value;
         const contact = form.contact.value;
         const picture = form.picture.value;
-
-        
         // const availability = form.availability.value;
 
         const updatedRoom = {
@@ -55,22 +50,7 @@ const UpdateRoommate = () => {
             picture,
         };
 
-        // old code 
-        // const formDate = new FormData(form);
-        // const newRoommate = Object.fromEntries(formDate.entries());
-
-
         Object.assign(updatedRoom, myDetails);
-        // console.log(updatedRoom);
-
-
-
-
-        // old code
-        // const formData = new FormData(form);
-        // const updatedRoom = Object.fromEntries(formData.entries())
-
-        // console.log(updatedRoom);
 
         //updated DB
         fetch(`http://localhost:3000/roommates/${_id}`, {

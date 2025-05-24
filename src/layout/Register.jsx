@@ -22,9 +22,7 @@ const Register = () => {
         const userEmail = e.target.email.value;
         const userPhoto = e.target.photoUrl.value;
         const userPassword = e.target.password.value;
-        // console.log(userName, userEmail, userPhoto, userPassword);
-
-
+        
         //name error
         if (userName.length < 5) {
             setNameError("Name should be More than 5 character!");
@@ -48,8 +46,6 @@ const Register = () => {
         const errors = [];
         const hasUppercase = (str) => /[A-Z]/.test(str);
         const hasLowercase = (str) => /[a-z]/.test(str);
-        // const hasNumeric = (str) => /\d/.test(str);
-        // const hasSpecialCharacter = (str) => /[^a-zA-Z0-9]/.test(str);
 
         if (userPassword.length < 6) {
             errors.push("Password should be at least 6 CHARACTERS long !");
@@ -60,16 +56,6 @@ const Register = () => {
         if (!hasLowercase(userPassword)) {
             errors.push("Password should have a LOWERCASE character !");
         }
-        // if(!hasNumeric(userPassword))
-        // {
-        //     errors.push("Password should have a NUMERIC character !");
-        // }
-        // if(!hasSpecialCharacter(userPassword))
-        // {
-        //     errors.push("Password should have a SPECIAL character !");
-        // }
-
-        // console.log(passwordError);
 
         if (errors.length !== 0) {
             setPasswordError(errors);
@@ -102,7 +88,6 @@ const Register = () => {
                         setFirebaseError(error.message);
                         setUser(user);
                     })
-                // console.log(user);
             })
             .catch((error) => {
                 toast.error(`ERROR - ${error.message} `);

@@ -3,16 +3,14 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
 import { useNavigate } from 'react-router';
 
-
 const AddRoommate = () => {
 
     const navigate = useNavigate();
-
     const { user, color } = use(AuthContext);
-    console.log(user.displayName, user.email);
+    // console.log(user.displayName, user.email);
 
     const [isAvailable, setIsAvailable] = useState(true);
-
+    
     const myDetails = { name: user.displayName, email: user.email, availability: isAvailable ? "yes" : "no", };
 
     const [lifestyleList, setLifestyleList] = useState([]);
@@ -44,8 +42,7 @@ const AddRoommate = () => {
         radioButton.defaultChecked = true; // sets the default (initial) state
         radioButton.checked = true;
     };
-
-    console.log(lifestyleList);
+    // console.log(lifestyleList);
 
     const handleAddRoommate = (e) => {
         e.preventDefault();
@@ -77,14 +74,8 @@ const AddRoommate = () => {
             likedUsers,
         };
 
-
-        // old code 
-        // const formDate = new FormData(form);
-        // const newRoommate = Object.fromEntries(formDate.entries());
-
-
         Object.assign(newRoommate, myDetails);
-        console.log(newRoommate);
+        // console.log(newRoommate);
 
         //send to DB
         fetch('http://localhost:3000/roommates', {

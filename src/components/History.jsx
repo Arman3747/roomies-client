@@ -27,11 +27,12 @@ const History = () => {
                                 <th className='border-r-2 border-[#6D758020] text-2xl px-5 py-5'>2023</th>
                                 <td className='text-2xl px-5 py-5'><span  className='text-3xl text-[#006977]'>roomies</span> launched all over the whole country.</td>
                             </tr>
+                            {/* row 4 */}
                             <tr>
                                 <th className='border-r-2 border-[#6D758020] text-2xl px-5 py-5'>2024</th>
                                 <td className='text-2xl px-5 py-5'> <span  className='text-3xl text-[#006977]'>roomies</span> becomes the largest specialized share accommodation website.</td>
                             </tr>
-
+                            {/* row 5 */}
                             <tr>
                                 <th className='border-r-2 border-[#6D758020] text-2xl px-5 py-5'>2025</th>
                                 <td className='text-2xl px-5 py-5'> <span  className='text-3xl text-[#006977]'>roomies</span> hits 2 million visits in a month for the first time.</td>

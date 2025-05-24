@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 import Lottie from "lottie-react";
 import pageNotFound from "../assets/pageNotFound.json"
-import { AuthContext } from '../provider/AuthProvider';
 
 const ErrorPage = () => {
     return (
@@ -17,12 +16,9 @@ const ErrorPage = () => {
                     </div>
 
                     <div className='w-full lg:w-1/2'>
-
                         <Lottie animationData={pageNotFound} />
-
                     </div>
                 </div>
-
             </div>
         </div>
     );

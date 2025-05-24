@@ -7,11 +7,8 @@ import { Tooltip } from 'react-tooltip';
 
 const ProfilePicture = () => {
 
-    const { color } = use(AuthContext);
-
     const navigate = useNavigate();
-
-    const { user, logOut } = use(AuthContext);
+    const { user, logOut, color } = use(AuthContext);
 
     const handleLogOut = () => {
         logOut()

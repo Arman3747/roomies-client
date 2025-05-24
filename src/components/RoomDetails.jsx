@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link, Navigate, useLoaderData, useParams } from 'react-router';
+import { Navigate, useLoaderData, useParams } from 'react-router';
 import RoomDetailsEach from './RoomDetailsEach';
 
 const RoomDetails = () => {
 
     const room = useLoaderData();
     const { id } = useParams();
-    // const navigate = useNavigate()
 
     return (
         <div>

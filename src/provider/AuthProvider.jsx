@@ -4,7 +4,6 @@ import { GoogleAuthProvider } from "firebase/auth";
 import app from '../firebase/firebase.config';
 
 
-
 export const AuthContext = createContext();
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
@@ -15,25 +14,8 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [color, setColor] = useState(true);
-    // const [money, setMoney] = useState(10000);
 
-    console.log(user);
-
-
-    // disable pay button functions
-
-    // const [buttonStates, setButtonStates] = useState({});
-    // // console.log(buttonStates);
-    // const handleClick = (id, amount) => {
-    //     setMoney(money-amount);
-    //     setButtonStates((prev) => ({
-    //         ...prev,
-    //         [id]: true,
-    //     }));
-    //     // console.log(buttonStates);
-    // };
-    // disable pay button function finish and also added in the AuthData down under :)
-
+    // console.log(user);
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -81,9 +63,6 @@ const AuthProvider = ({ children }) => {
         logOut,
         loading,
         setLoading,
-        // buttonStates,
-        // setButtonStates,
-        // handleClick,
     };
 
     return <AuthContext value={authData}>{children}</AuthContext>;

@@ -6,7 +6,6 @@ import { AuthContext } from '../provider/AuthProvider';
 const MyListing = ({ myListingRoom, handleRemainingRooms }) => {
 
     const { color } = use(AuthContext);
- 
     const { _id, picture, title, location, rent, availability } = myListingRoom;
 
     const handleDelete = (_id) => {

@@ -7,15 +7,6 @@ import ProfilePicture from './ProfilePicture';
 const NavBar = () => {
 
     const { user, setColor, color } = use(AuthContext);
-    console.log("color", color);
-
-    //     className = {` ${buttonStates[auction.id]
-    //             ? 'text-red-500 cursor-not-allowed'
-    //             : 'text-[#0E2954] cursor-pointer'
-    //         }`
-    // }
-
-
 
     return (
         <div className='max-w-[1600px] mx-auto border-b-2 border-dashed border-[#2F3A4A] p-4'>

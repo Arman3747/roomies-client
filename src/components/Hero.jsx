@@ -29,10 +29,9 @@ const Hero = () => {
       </div>
 
       <div className='w-full lg:w-1/2'>
-
         <Lottie animationData={hero_sitting} />
-
       </div>
+      
     </div>
     );
 };

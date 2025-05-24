@@ -1,50 +1,15 @@
 import React from 'react';
 import { use } from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router';
-import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
 
 const RoomDetailsEach = ({ room }) => {
 
     const { user } = use(AuthContext);
-    console.log(user.email);
-
-    // Failed to load resource: the server responded with a status of 500 (Internal Server Error)
-
     const { _id, likeCount, likedUsers, title, location, rent, type, lifestyle, description, contact, picture, availability, email, name } = room;
 
     const [likeCountTotal, setLikeCountTotal] = useState(likeCount);
     const [likedUsersList, setLikedUsersList] = useState(likedUsers);
-
-    // const handleDelete = (_id) => {
-
-    //     Swal.fire({
-    //         title: "Are you sure?",
-    //         text: "You won't be able to revert this!",
-    //         icon: "warning",
-    //         showCancelButton: true,
-    //         confirmButtonColor: "#3085d6",
-    //         cancelButtonColor: "#d33",
-    //         confirmButtonText: "Yes, delete it!"
-    //     }).then((result) => {
-    //         if (result.isConfirmed) {
-    //             fetch(`http://localhost:3000/roommates/${_id}`, {
-    //                 method: 'DELETE'
-    //             })
-    //                 .then(res => res.json())
-    //                 .then(data => {
-    //                     if (data.deletedCount) {
-    //                         Swal.fire({
-    //                             title: "Deleted!",
-    //                             text: "Your room has been deleted !",
-    //                             icon: "success"
-    //                         });
-    //                     }
-    //                 })
-    //         }
-    //     });
-    // }
 
     const handleLikeClick = () => {
 
@@ -84,7 +49,6 @@ const RoomDetailsEach = ({ room }) => {
     return (
         <div>
             <div className='max-w-[1600px] mx-auto px-4 lg:px-8 space-y-4 my-8' >
-
                 <div className='flex flex-col gap-10 px-8px'>
 
                     <div className='flex justify-center items-center'>
@@ -97,12 +61,12 @@ const RoomDetailsEach = ({ room }) => {
                             Like
                         </button>
                     </div>
+
                     {
                         likedUsersList.includes(user.email) ? <div className='flex justify-end items-center'>
-                        <h3 className='text-2xl font-medium mb-4'>Contact: {contact}  </h3>
-                    </div> : " "
+                            <h3 className='text-2xl font-medium mb-4'>Contact: {contact}  </h3>
+                        </div> : " "
                     }
-                    
 
                     <div className='flex flex-col lg:flex-row justify-center items-center gap-8 mx-auto'>
                         <div className='border-2 rounded-2xl border-[#00697720]'>
@@ -126,6 +90,7 @@ const RoomDetailsEach = ({ room }) => {
                     </div>
 
                     <div className='flex flex-row justify-around w-11/12 lg:w-10/12 mx-auto items-center gap-4'>
+                       
                         {/* {lifestyle} */}
                         {
                             lifestyle.map((eachLifeStyle, index) => <button key={index} className='btn btn-neutral'>{eachLifeStyle}</button>)
@@ -138,21 +103,6 @@ const RoomDetailsEach = ({ room }) => {
                         <h3 className='text-2xl font-medium mb-4'>Email: {email}  </h3>
                         <h3 className='text-2xl font-medium mb-4'>Name: {name}  </h3>
                     </div>
-
-                    {/* <div className='flex justify-between items-center w-11/12 lg:w-10/12 mx-auto'>
-                        <div></div>
-                        <Link to={`/updateRoommate/${_id}`}>
-                            <button
-                                className="px-16 py-4 text-2xl font-semibold rounded-md border-2 cursor-pointer bg-white hover:cursor-pointer hover:bg-[#00697710] border-[#006977] text-[#006977]">
-                                Edit
-                            </button>
-                        </Link>
-
-                        <button onClick={() => handleDelete(_id)}
-                            className="px-16 py-4 text-2xl font-semibold rounded-md border-2 cursor-pointer hover:bg-red-50 hover:cursor-pointer bg-white border-red-500 text-red-500 hover:text-red-600">
-                            Delete
-                        </button>
-                    </div> */}
                 </div>
             </div>
         </div>

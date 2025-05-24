@@ -31,33 +31,31 @@ const Faqs = () => {
                 <div className="collapse collapse-plus border border-base-300">
                     <input type="radio" name="my-accordion-3" />
                     <div className="collapse-title font-medium text-3xl">I need help or tenancy advice. </div>
-                    <div className="collapse-content text-2xl">Roomies is a site that can be used for free. 
-                    <br />
-                    <br />
-                    Upgrading allows you to contact all members, view available mobile numbers, and list multiple properties.</div>
+                    <div className="collapse-content text-2xl">Roomies is a site that can be used for free.
+                        <br />
+                        <br />
+                        Upgrading allows you to contact all members, view available mobile numbers, and list multiple properties.</div>
                 </div>
 
                 <div className="collapse collapse-plus border border-base-300">
                     <input type="radio" name="my-accordion-3" />
                     <div className="collapse-title font-medium text-3xl">I have not received a verification SMS?</div>
                     <div className="collapse-content text-2xl">SMS verification can take up to 30 minutes to be delivered depending on your country or provider. When you receive the code, please ensure your code is entered correctly and in full.
-                    <br />
-                    <br />
-                    If you close the screen to enter your code, you will need to request a new code. Only the most recently requested code will work.</div>
+                        <br />
+                        <br />
+                        If you close the screen to enter your code, you will need to request a new code. Only the most recently requested code will work.</div>
                 </div>
 
                 <div className="collapse collapse-plus border border-base-300">
                     <input type="radio" name="my-accordion-3" />
                     <div className="collapse-title font-medium text-3xl">How come people are sending me text messages or calling my phone?</div>
                     <div className="collapse-content text-2xl">As part of our upgrade service, paid members can access “verified members mobile numbers.”
-                    <br />
-                    <br />
-                    If you do not wish for members to access your mobile number, you can change this access in account settings.</div>
+                        <br />
+                        <br />
+                        If you do not wish for members to access your mobile number, you can change this access in account settings.</div>
                 </div>
             </div>
         </div>
-
-
     );
 };
 

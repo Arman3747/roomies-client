@@ -33,8 +33,6 @@ const Carousel = () => {
                 <SwiperSlide> <CarouselOne></CarouselOne> </SwiperSlide>
                 <SwiperSlide> <CarouselTwo></CarouselTwo> </SwiperSlide>
                 <SwiperSlide> <CarouselThree></CarouselThree> </SwiperSlide>
-                {/* <SwiperSlide> <CarouselFour></CarouselFour> </SwiperSlide> */}
-                
             </Swiper>
         </div>
     );
