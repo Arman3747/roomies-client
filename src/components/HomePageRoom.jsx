@@ -25,7 +25,7 @@ const HomePageRoom = ({ showRoom }) => {
 
                     <Link to={`/roomDetails/${_id}`}>
                         <button
-                            className={`my-8 w-full py-4 text-lg font-semibold rounded-full border-2 cursor-pointer hover:underline hover:cursor-pointer  ${ color ? "hover:bg-white  bg-[#00697710] border-[#006977] text-[#006977]"  : "bg-gray-700 border-white text-white" }`}>
+                            className={`my-8 w-full py-4 text-lg font-semibold rounded-2xl border-2 cursor-pointer hover:underline hover:cursor-pointer  ${ color ? "hover:bg-white  bg-[#00697710] border-[#006977] text-[#006977]"  : "bg-gray-700 border-white text-white" }`}>
                             View Details
                         </button>
                     </Link>

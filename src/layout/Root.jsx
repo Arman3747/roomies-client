@@ -11,7 +11,7 @@ const Root = () => {
 
     return (
         <div className={`${color? 'bg-white text-[#2F3A4A]' : 'text-white bg-[#2F3A4A]' }`}>
-            <header>
+            <header className={` sticky top-0 z-1000  ${color? 'bg-white text-[#2F3A4A]' : 'text-white bg-[#2F3A4A]' }`}>
                 <NavBar></NavBar>
             </header>
 

@@ -1,18 +1,37 @@
-import React from 'react';
-import { NavLink } from 'react-router';
+import React, { use } from 'react';
+import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Footer = () => {
+
+    const { user } = use(AuthContext);
+
     return (
         <div className='max-w-[1600px] mx-auto'>
             <div className='flex flex-col gap-4 justify-between items-center px-20 py-20 bg-[#2F3A4A]'>
-                <img className='h-[36px]' src="https://i.ibb.co/4nMpnFDJ/logo-roomies-dark.png" alt="" />
+                <Link to="/">
+                    <img className='h-[36px]' src="https://i.ibb.co/4nMpnFDJ/logo-roomies-dark.png" alt="" />
+                </Link>
+
                 <div>
                     <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/">Home</NavLink>
-                    <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/addRoommate">Add</NavLink>
+                    {
+                        user ? <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/addRoommate">Add</NavLink> : " "
+                    }
+
                     <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/browseRoommate">Browse</NavLink>
-                    <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/myListings">My Listings</NavLink>
+
+                    {
+                        user ? <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/myListings">My Listings</NavLink> : " "
+                    }
+
+                    <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/terms">Terms and Conditions</NavLink>
+
+                    <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/privacy">Privacy Policy</NavLink>
+
+                    <NavLink className="mr-5 text-lg text-white hover:underline decoration-2" to="/aboutUs">About Us</NavLink>
                 </div>
-                
+
                 <div className=' flex justify-center items-center gap-4 text-white'>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

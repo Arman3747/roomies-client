@@ -6,11 +6,7 @@ const CarouselTwo = () => {
     return (
         <div className='flex flex-col lg:flex-row justify-between items-center my-4 lg:my-20 p-2  md:p-8 lg:p-16'>
 
-            <div className='w-full lg:w-1/2'>
 
-                <Lottie animationData={foodSitting} />
-
-            </div>
 
             <div className='w-full lg:w-1/2'>
 
@@ -33,6 +29,14 @@ const CarouselTwo = () => {
                     <div className='text-lg font-medium text-justify'>Build friendships over food, not just bills</div>
                 </div>
             </div>
+
+            <div className='w-full lg:w-1/2'>
+
+                <Lottie animationData={foodSitting} />
+
+            </div>
+
+
 
         </div>
     );

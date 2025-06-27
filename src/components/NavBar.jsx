@@ -3,15 +3,19 @@ import NavLinks from './NavLinks';
 import SignUpButtons from './SignUpButtons';
 import { AuthContext } from '../provider/AuthProvider';
 import ProfilePicture from './ProfilePicture';
+import { Link } from 'react-router';
 
 const NavBar = () => {
 
     const { user, setColor, color } = use(AuthContext);
 
     return (
-        <div className='max-w-[1600px] mx-auto border-b-2 border-dashed border-[#2F3A4A] p-4'>
-            <div className='flex flex-col gap-2 md:flex-row justify-between items-center sm:px-4 md:px-20 py-8'>
-                <img className='h-[36px]' src={`${color ? "https://i.ibb.co/h3H1YWN/logo-roomies-light.png" : "https://i.ibb.co/4nMpnFDJ/logo-roomies-dark.png"}`} alt="" />
+        <div className='max-w-[1600px] mx-auto py-4 px-4 border-b border-gray-300'>
+            <div className='flex flex-col gap-2 md:flex-row justify-between items-center sm:px-4 md:px-8 py-2'>
+                <Link to="/">
+                    <img className='h-[36px]' src={`${color ? "https://i.ibb.co/h3H1YWN/logo-roomies-light.png" : "https://i.ibb.co/4nMpnFDJ/logo-roomies-dark.png"}`} alt="" />
+                </Link>
+
                 <div>
                     <NavLinks></NavLinks>
                 </div>
@@ -48,6 +52,7 @@ const NavBar = () => {
 
                 </div>
             </div>
+            {/* <div className="divider divider-success py-0 my-0"></div> */}
         </div>
     );
 };

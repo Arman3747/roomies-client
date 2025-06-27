@@ -1,6 +1,4 @@
-import {
-    createBrowserRouter,
-} from "react-router";
+import { createBrowserRouter } from "react-router";
 import Root from "../layout/Root";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../layout/Home";
@@ -13,6 +11,9 @@ import Login from "../layout/Login";
 import Register from "../layout/Register";
 import PrivateRoute from "../provider/PrivateRoute";
 import MyListings from "../components/MyListings";
+import Conditions from "../components/Conditions";
+import Privacy from "../components/Privacy";
+import AboutUs from "../components/AboutUs";
 
 
 const router = createBrowserRouter([
@@ -55,6 +56,18 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><UpdateRoommate></UpdateRoommate></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://roomies-server-seven.vercel.app/roommates/${params.id}`),
                 hydrateFallbackElement: <Loading></Loading>,
+            },
+            {
+                path: "/terms",
+                element: <Conditions></Conditions>,
+            },
+            {
+                path:"/privacy",
+                element: <Privacy></Privacy>,
+            },
+            {
+                path: "/aboutUs",
+                element: <AboutUs></AboutUs>,
             },
             {
                 path: "/login",
